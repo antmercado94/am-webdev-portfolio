@@ -7,3 +7,5 @@
 /* utils */
 @import "tailwindcss/utilities";
 @import "./utilities/utilities.css";
+/* prismJS theme */
+@import "./themes/prism-shades-of-purple";

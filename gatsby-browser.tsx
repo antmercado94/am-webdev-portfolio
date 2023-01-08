@@ -3,7 +3,6 @@ import BlogContextProvider from "./src/context/BlogContext";
 import AnimationContextProvider from "./src/context/AnimationContext";
 import Layout from "./src/components/Layout";
 import "./src/styles/global.css";
-require("prismjs/themes/prism-shades-of-purple.css");
 
 /* context */
 export const wrapRootElement = ({ element }) => (
