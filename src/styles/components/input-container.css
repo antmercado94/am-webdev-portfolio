@@ -1,0 +1,63 @@
+@layer components {
+  :root {
+    --input-msg-mt: 0.1rem;
+    --input-msg-fs: 0.45em;
+    /* input container */
+    --input-container-mb: 0.6rem;
+    --input-valid-fs: 0.65em;
+  }
+  .error,
+  .error--textarea,
+  .success {
+    font-size: var(--input-msg-fs);
+    @apply mt-[var(--input-msg-mt)] 
+      font-heading 
+      font-medium 
+      uppercase 
+      text-themeYellow;
+  }
+  .error {
+    @apply absolute;
+  }
+  .input-container {
+    @apply mb-[var(--input-container-mb)];
+    span {
+      @apply transition-all;
+    }
+    input:valid ~ span:first-of-type,
+    input:focus ~ span:first-of-type {
+      font-size: var(--input-valid-fs);
+      @apply -translate-y-5 
+        opacity-100 
+        font-medium
+        text-themeYellow 
+        text-shadow--yellow;
+    }
+    input:valid ~ span:not(span:first-of-type),
+    input:focus ~ span:not(span:first-of-type) {
+      @apply border-themeTeal drop-shadow-tealBottom;
+    }
+  }
+  .neon-container {
+    &:before,
+    &:after,
+    .neon-container__inner--left:before,
+    .neon-sign {
+      @apply transition-all;
+    }
+  }
+  .neon-container[data-focus="true"] {
+    &:before,
+    &:after,
+    .neon-container__inner--left:before {
+      @apply transition-all border-themeTeal drop-shadow-teal;
+    }
+    .neon-sign {
+      @apply transition-all
+      border-themeMagenta 
+        shadow-magenta
+      text-themeYellow 
+        text-shadow--yellow;
+    }
+  }
+}

@@ -1,0 +1,258 @@
+@layer components {
+  :root {
+    /* single blog*/
+    --single-sign-width-pseudo: 11.5vw;
+    --single-sign-left-before: -12.5vw;
+    --single-sign-right-after: -12.5vw;
+    --single-sign-width-pseudo-xs: 12vw;
+    --single-sign-width-pseudo-lg: 7.75rem;
+    --single-sign-left-before-lg: -8rem;
+    --single-sign-right-after-lg: -8rem;
+    /* single text */
+    --single-h3-fs-sm: 1.1rem;
+    --single-h3-fs-lg: 1.2rem;
+    --single-p-fs: 0.8em;
+    --single-p-fs-sm: 0.85rem;
+    --single-p-fs-md: 0.95rem;
+    --single-p-fs-lg: 1rem;
+    --single-codeblock-fs: 14px;
+    --single-codeblock-fs-md: 16px;
+    /* single container */
+    --single-container-max-w: 60rem;
+    /* single wrapper */
+    --single-wrapper-min-height: 40rem;
+    --single-wrapper-min-height-sm: 45rem;
+    --single-wrapper-min-height-lg: 50rem;
+    --single-wrapper-padding-x: 4ch;
+    --single-wrapper-padding-x-xs: 2.5ch;
+    --single-wrapper-padding-x-xs2: 4ch;
+    --single-wrapper-padding-x-sm: 6ch;
+    --single-wrapper-padding-x-md: 8ch;
+    --single-wrapper-padding-x-lg: 16ch;
+    --single-wrapper-padding-x-xl: 18ch;
+    /* single pagination */
+    --single-pagination-margin-y: 0.75em;
+    --single-close-bottom: 2vh;
+    /* single date */
+    --single-date-fs: 0.65rem;
+    --single-date-fs-lg: 0.75rem;
+  }
+  .single {
+    @apply font-content text-offWhite;
+    h2,
+    h3 {
+      @apply capitalize;
+    }
+    h2 {
+      @apply font-heading font-bold;
+      &:not(".single__title") {
+        @apply text-xl;
+        @screen sm {
+          @apply text-2xl;
+        }
+        @screen lg {
+          @apply text-3xl;
+        }
+      }
+    }
+    h3 {
+      @apply my-3 font-medium tracking-wide font-heading;
+      @screen sm {
+        font-size: var(--single-h3-fs-sm);
+      }
+      @screen lg {
+        font-size: var(--single-h3-fs-lg);
+      }
+    }
+    p {
+      @apply my-4;
+      font-size: var(--single-p-fs);
+      @screen sm {
+        font-size: var(--single-p-fs-sm);
+      }
+      @screen md {
+        font-size: var(--single-p-fs-md);
+      }
+      @screen lg {
+        font-size: var(--single-p-fs-lg);
+      }
+    }
+    a {
+      @apply text-themeMagenta 
+        hover:underline;
+    }
+    figure {
+      @apply my-8;
+    }
+    figcaption {
+      @apply my-2 text-xs text-center opacity-75;
+    }
+    .gatsby-highlight {
+      pre {
+        @apply my-[2em];
+      }
+    }
+    pre {
+      @apply max-w-0 
+        min-w-full;
+      code {
+        font-size: var(--single-codeblock-fs) !important;
+        @screen md {
+          font-size: var(--single-codeblock-fs-md) !important;
+        }
+      }
+    }
+    code[class="language-text"] {
+      font-size: inherit;
+      line-height: inherit;
+      white-space: normal;
+      @apply break-all;
+    }
+    blockquote {
+      @apply w-[90%]
+        my-[2em]
+        mx-auto
+        py-[0.5em]
+        px-[10px]
+        border-l-[5px]
+       border-l-themeTeal
+       bg-[#1e1e3f];
+    }
+    blockquote p {
+      @apply inline font-heading text-themeMagenta;
+    }
+    &__container {
+      @apply max-w-[var(--single-container-max-w)];
+    }
+    &__wrapper {
+      @apply min-h-[var(--single-wrapper-min-height)]
+        px-[var(--single-wrapper-padding-x)] 
+        py-4;
+      @screen xs {
+        @apply px-[var(--single-wrapper-padding-x-xs)]
+            py-6;
+      }
+      @screen xs2 {
+        @apply px-[var(--single-wrapper-padding-x-xs2)]
+            py-8;
+      }
+      @screen sm {
+        @apply min-h-[var(--single-wrapper-min-height-sm)]
+          px-[var(--single-wrapper-padding-x-sm)]
+          py-12;
+      }
+      @screen md {
+        @apply px-[var(--single-wrapper-padding-x-md)]
+          py-14;
+      }
+      @screen lg {
+        @apply min-h-[var(--single-wrapper-min-height-lg)]
+          px-[var(--single-wrapper-padding-x-lg)]
+          py-16;
+      }
+      @screen xl {
+        @apply px-[var(--single-wrapper-padding-x-xl)];
+      }
+    }
+    &__title {
+      border-radius: 1px;
+      @apply mt-12 mb-8 text-2xl text-center tracking-wide text-themeYellow;
+      @screen md {
+        font-size: 2rem;
+        line-height: 2.5rem;
+      }
+      @screen lg {
+        font-size: 2.5rem;
+        line-height: 3rem;
+      }
+      &:after {
+        content: "";
+        @apply block w-8 h-1 mt-8 mb-8 mx-auto bg-themeTeal;
+        @screen md {
+          @apply mt-10 mb-10;
+        }
+        @screen lg {
+          @apply mt-12 mb-12;
+        }
+      }
+    }
+    &__content {
+      h2 {
+        @apply mt-2;
+      }
+    }
+    &__edge,
+    &__close {
+      span {
+        @apply w-[var(--projects-pagination-arrow-width)] 
+          block;
+      }
+    }
+    &__edge {
+      @apply sticky top-1/2;
+      span {
+        @apply my-[var(--single-pagination-margin-y)];
+      }
+    }
+    &__close {
+      span {
+        @apply z-10;
+        &.arrow--fixed {
+          @apply bottom-[var(--single-close-bottom)] 
+            fixed 
+            right-0;
+          @screen sm {
+            @apply right-1/2 translate-x-1/2;
+          }
+        }
+      }
+    }
+    &__date--shadow {
+      @screen xxs {
+        &:before,
+        &:after {
+          @apply drop-shadow-magenta;
+        }
+      }
+    }
+    &__date {
+      font-size: var(--single-date-fs);
+      @screen xxs {
+        &:before,
+        &:after {
+          content: "";
+          border-bottom: var(--container-border-width) solid;
+          @apply w-[var(--single-sign-width-pseudo)] 
+            absolute
+            bottom-1/2
+            border-themeMagenta;
+        }
+        &:before {
+          @apply left-[var(--single-sign-left-before)];
+        }
+        &:after {
+          @apply right-[var(--single-sign-right-after)];
+        }
+      }
+      @screen xs {
+        &:before,
+        &:after {
+          @apply w-[var(--single-sign-width-pseudo-xs)];
+        }
+      }
+      @screen lg {
+        font-size: var(--single-date-fs-lg);
+        &:before,
+        &:after {
+          @apply w-[var(--single-sign-width-pseudo-lg)];
+        }
+        &:before {
+          @apply left-[var(--single-sign-left-before-lg)];
+        }
+        &:after {
+          @apply right-[var(--single-sign-right-after-lg)];
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,65 @@
+@layer components {
+  :root {
+    --blog-max-w-xxs: 20rem;
+    --blog-max-w-xs2: 22rem;
+    --blog-max-w-xs3: 24rem;
+    --blog-max-w-sm: 27rem;
+    --blog-max-w-md: 32rem;
+    --blog-max-w-lg: 34rem;
+    --blog-max-w-xl: 38rem;
+    /* excerpts wrapper */
+    --blog-wrapper-mx: 14%;
+    --blog-wrapper-gap: 1.6em;
+  }
+
+  .blog {
+    @screen xxs {
+      @apply max-w-[var(--blog-max-w-xxs)] mx-auto;
+    }
+    @screen xs2 {
+      @apply max-w-[var(--blog-max-w-xs2)];
+    }
+    @screen xs3 {
+      @apply max-w-[var(--blog-max-w-xs3)];
+    }
+    @screen sm {
+      @apply mx-0 max-w-[var(--blog-max-w-sm)];
+    }
+    @screen md {
+      @apply max-w-[var(--blog-max-w-md)];
+    }
+    @screen lg {
+      @apply max-w-[var(--blog-max-w-lg)];
+    }
+    @screen xl {
+      @apply max-w-[var(--blog-max-w-xl)];
+    }
+    .excerpts-wrapper {
+      @apply mx-[var(--blog-wrapper-mx)] gap-[var(--blog-wrapper-gap)] w-full;
+      @screen sm {
+        @apply mx-12;
+      }
+      &--animate {
+        animation: reveal 0.25s ease-in-out;
+      }
+    }
+    &__pagination {
+      @apply absolute w-full;
+      ul {
+        @apply flex justify-between;
+        li.disabled {
+          a {
+            @apply cursor-default;
+          }
+        }
+        .previous,
+        .next {
+          @apply w-[var(--projects-pagination-arrow-width)];
+        }
+        .next {
+          @apply right-0;
+        }
+      }
+    }
+  }
+}

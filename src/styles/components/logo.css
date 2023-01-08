@@ -1,0 +1,33 @@
+@layer components {
+  :root {
+    --logo-span-height: 4%;
+    --logo-span-bottom: 20%;
+    --logo-span-left: 105.5%;
+    --logo-span-left-md: 107%;
+    --logo-svg-width: 42vw;
+  }
+  /* utility */
+  .logo-w-sm {
+    width: min(47vw, 23rem);
+  }
+  .logo-mr-sm {
+    margin-right: min(49%, 25.5rem);
+  }
+
+  .logo {
+    span {
+      @apply h-[var(--logo-span-height)] 
+      bottom-[var(--logo-span-bottom)] 
+      left-[var(--logo-span-left)];
+      @screen md {
+        @apply left-[var(--logo-span-left-md)];
+      }
+    }
+    svg {
+      @apply w-[var(--logo-svg-width)];
+      @screen sm {
+        @apply logo-w-sm;
+      }
+    }
+  }
+}

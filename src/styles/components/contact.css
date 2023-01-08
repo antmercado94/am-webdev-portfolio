@@ -1,0 +1,58 @@
+@layer components {
+  :root {
+    --contact-max-w: 24rem;
+    --contact-max-w-sm: 24rem;
+    --contact-max-w-md: 26rem;
+    --contact-padding-right: 2em;
+    /* contact form input label */
+    --contact-label-fs: 0.9rem;
+    --contact-label-fs-md: 1rem;
+    /* contact neon sign */
+    --contact-sign-right: -6.8em;
+    --contact-sign-leading: 1.55em;
+    --contact-sign-fs: 0.65em;
+    --contact-sign-fs-md: 0.75rem;
+  }
+
+  .contact {
+    @apply max-w-[var(--contact-max-w)] pr-[var(--contact-padding-right)] w-full mt-20;
+    @screen sm {
+      @apply max-w-[var(--contact-max-w-sm)] pr-0;
+    }
+    @screen md {
+      @apply max-w-[var(--contact-max-w-md)];
+    }
+    form {
+      @apply gap-4 md:gap-5;
+    }
+    &__label {
+      font-size: var(--contact-label-fs);
+      @screen md {
+        font-size: var(--contact-label-fs-md);
+      }
+    }
+    &__sign {
+      font-size: var(--contact-sign-fs);
+      @apply right-[var(--contact-sign-right)] leading-[var(--contact-sign-leading)];
+      @screen md {
+        font-size: var(--contact-sign-fs-md);
+      }
+    }
+    &__textarea {
+      @apply basis-52 md:basis-56 xl:basis-60;
+      .textarea__container {
+        @apply p-[3%]
+        w-full 
+        h-full 
+        overflow-hidden;
+        textarea {
+          @apply w-[calc(100%+50px)] 
+          pr-[50px]
+          h-full 
+          overflow-y-scroll 
+          box-border;
+        }
+      }
+    }
+  }
+}

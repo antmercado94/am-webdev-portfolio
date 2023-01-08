@@ -1,0 +1,96 @@
+@layer components {
+  :root {
+    --excerpt-padding-x: 0.6em;
+    --excerpt-padding-top: 0.3em;
+    --excerpt-padding-bottom: 0.65em;
+    --excerpt-max-h-sm: 5.2rem;
+    --excerpt-max-h-xl: 5.3rem;
+    /* excerpt h2 */
+    --excerpt-h2-fs: 0.7em;
+    --excerpt-h2-fs-sm: 0.75em;
+    --excerpt-h2-fs-lg: 0.8em;
+    --excerpt-h2-margin-bottom: 0.1em;
+    /* excerpt p */
+    --excerpt-p-fs: 0.6em;
+    --excerpt-p-fs-sm: 0.65em;
+    --excerpt-p-fs-lg: 0.7em;
+    /* excerpt date */
+    --excerpt-date-min-w: 7.65em;
+    --excerpt-date-fs-md: 0.65rem;
+    --excerpt-date-fs-lg: 0.7rem;
+    /* excerpt hovered */
+    --excerpt-hov-w: 96%;
+    --excerpt-hov-w-sm: 98%;
+    --excerpt-hov-min-h: 80%;
+    --excerpt-hov-min-h-sm: 78%;
+    --excerpt-hov-top: 0.4rem;
+    --excerpt-hov-top-sm: 0.3rem;
+  }
+  /* utility */
+  .excerpt--hovered {
+    .excerpt__hovered {
+      @apply opacity-100;
+    }
+  }
+
+  .excerpt {
+    @apply px-[var(--excerpt-padding-x)] 
+      pt-[var(--excerpt-padding-top)] 
+      pb-[var(--excerpt-padding-bottom)] 
+      max-h-24 
+      aspect-excerpt 
+      cursor-pointer;
+    @screen sm {
+      @apply max-h-[var(--excerpt-max-h-sm)];
+    }
+    @screen xl {
+      @apply max-h-[var(--excerpt-max-h-xl)];
+    }
+    @media (hover: hover) {
+      @apply hover:excerpt--hovered;
+    }
+    h2 {
+      font-size: var(--excerpt-h2-fs);
+      @apply mb-[var(--excerpt-h2-margin-bottom)] line-clamp-2 leading-snug;
+      @screen sm {
+        font-size: var(--excerpt-h2-fs-sm);
+      }
+      @screen lg {
+        font-size: var(--excerpt-h2-fs-lg);
+      }
+    }
+    p {
+      font-size: var(--excerpt-p-fs);
+      @apply line-clamp-2 leading-tight;
+      @screen sm {
+        font-size: var(--excerpt-p-fs-sm);
+      }
+      @screen lg {
+        font-size: var(--excerpt-p-fs-lg);
+      }
+    }
+    &__date {
+      span {
+        @apply min-w-[var(--excerpt-date-min-w)] 
+          text-center;
+        @screen md {
+          font-size: var(--excerpt-date-fs-md);
+        }
+        @screen lg {
+          font-size: var(--excerpt-date-fs-lg);
+        }
+      }
+    }
+    &__hovered {
+      @apply w-[var(--excerpt-hov-w)] 
+        min-h-[var(--excerpt-hov-min-h)] 
+        top-[var(--excerpt-hov-top)] 
+        transition-opacity;
+      @screen sm {
+        @apply min-h-[var(--excerpt-hov-min-h-sm)] 
+          top-[var(--excerpt-hov-top-sm)] 
+          w-[var(--excerpt-hov-w-sm)];
+      }
+    }
+  }
+}

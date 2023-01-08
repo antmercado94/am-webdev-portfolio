@@ -1,0 +1,41 @@
+/********************************
+src: https://codepen.io/shakdaniel/pen/JoKOQx
+********************************/
+
+@layer components {
+  .icon-scroll {
+    box-shadow: inset 0 0 0 0.25em #ebd3d3;
+    border-radius: 2em;
+    @apply w-[12vw] 
+      h-[20vw] 
+      max-w-[2rem] 
+      max-h-[3.4rem] 
+      relative;
+    &:before {
+      content: "";
+      @apply left-[50%] 
+        w-[.4em] 
+        h-[.4em] 
+        ml-[-.2em] 
+        top-[.4em]
+        absolute
+        bg-offWhite;
+    }
+  }
+  .icon-scroll:before {
+    border-radius: 0.25em;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(2.5em);
+    }
+  }
+}

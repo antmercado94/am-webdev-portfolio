@@ -1,0 +1,124 @@
+@layer components {
+  :root {
+    --about-margin-x: 1em;
+    --about-fs-sm: 0.9em;
+    --about-fs-md: 1em;
+    --about-fs-lg: 1.1em;
+    --about-fs-xl: 1.2em;
+    /* about text */
+    --about-text-ml-md: 1.5rem;
+    /* about image */
+    --about-img-pl-sm: 2.1rem;
+    --about-img-pl-md: 2.5rem;
+    --about-img-max-w: 13rem;
+    /* about image container */
+    --about-img-fbasis: 10.5em;
+    --about-img-fbasis-smHeightMobile: 9em;
+    --about-img-min-w-sm: 13rem;
+    --about-img-min-w-md: 14rem;
+    --about-img-min-w-lg: 15rem;
+    --about-img-min-w-xl: 16rem;
+    /* about image neon sign */
+    --about-sign-right: -4.1em;
+    --about-sign-leading: 1.55em;
+    --about-sign-fs-sm: 0.65rem;
+    --about-sign-fs-md: 0.75rem;
+  }
+  /* utility */
+  .grid-cols-about {
+    grid-template-columns: 17rem 14rem;
+  }
+  .grid-cols-about--md {
+    grid-template-columns: 19rem 18rem;
+  }
+  .grid-cols-about--lg {
+    grid-template-columns: 20rem 22rem;
+  }
+  .grid-cols-about--xl {
+    grid-template-columns: 21rem 23rem;
+  }
+  .about-fs .about-img-width {
+    width: min(38vw, 15rem);
+  }
+  .about-img-width--md {
+    width: min(38vw, 17rem);
+  }
+
+  .about {
+    @apply mx-[var(--about-margin-x)];
+    @screen sm {
+      font-size: var(--about-fs-sm);
+      @apply mx-0 grid-cols-about;
+    }
+    @screen md {
+      font-size: var(--about-fs-md);
+      @apply grid-cols-about--md;
+    }
+    @screen lg {
+      font-size: var(--about-fs-lg);
+      @apply grid-cols-about--lg;
+    }
+    @screen xl {
+      font-size: var(--about-fs-xl);
+      @apply grid-cols-about--xl;
+    }
+    &__text {
+      p {
+        @screen md {
+          @apply ml-[var(--about-text-ml-md)];
+        }
+      }
+    }
+    &__img {
+      @screen sm {
+        @apply pl-[var(--about-img-pl-sm)] about-img-width;
+      }
+      @screen md {
+        @apply pl-[var(--about-img-pl-md)] about-img-width--md;
+      }
+      .img {
+        &__container {
+          @apply basis-[var(--about-img-fbasis)];
+          @screen smHeightMobile {
+            @apply basis-[var(--about-img-fbasis-smHeightMobile)];
+          }
+          @screen sm {
+            @apply basis-0 min-w-[var(--about-img-min-w-sm)];
+          }
+          @screen md {
+            @apply min-w-[var(--about-img-min-w-md)];
+          }
+          @screen lg {
+            @apply min-w-[var(--about-img-min-w-lg)];
+          }
+          @screen xl {
+            @apply min-w-[var(--about-img-min-w-xl)];
+          }
+        }
+        &__sign {
+          @apply right-[var(--about-sign-right)] 
+            leading-[var(--about-sign-leading)] 
+            absolute 
+            absolute-centered 
+            rotate-90 
+            text-ns;
+          @screen sm {
+            font-size: var(--about-sign-fs-sm);
+          }
+          @screen md {
+            font-size: var(--about-sign-fs-md);
+          }
+          span {
+            @apply animate-blink;
+          }
+        }
+      }
+    }
+    &__me {
+      @apply max-w-[var(--about-img-max-w)] sm:max-w-none;
+    }
+    &__skills {
+      @apply md:ml-6;
+    }
+  }
+}

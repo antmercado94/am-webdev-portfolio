@@ -1,0 +1,35 @@
+@layer components {
+  #main {
+    @apply bg-no-repeat bg-cover bg-bottom;
+    @screen sm {
+      @apply bg-right;
+    }
+    @screen smHeight {
+      @apply relative min-h-[680px] !important;
+    }
+    @screen xsHeightMobile {
+      @apply relative min-h-[620px] !important;
+    }
+    @screen smHeightMobile {
+      @apply relative min-h-[720px] !important;
+    }
+    > div {
+      @apply z-10;
+    }
+    .main__bg {
+      @screen smHeight {
+        @apply h-full;
+      }
+      @screen xsHeightMobile {
+        @apply h-full;
+      }
+      @screen smHeightMobile {
+        @apply h-full;
+      }
+      &:after {
+        content: "";
+        @apply absolute w-full h-full opacity-90 z-0 bg-containerBlue;
+      }
+    }
+  }
+}

@@ -1,0 +1,152 @@
+@layer components {
+  :root {
+    --landing-padding: 0.5em;
+    /* landing text */
+    --landing-text-padding-right-sm: 3.2em;
+    --landing-text-margin-left-sm: 0.2em;
+    --landing-text-margin-left-md: 0.7em;
+    /* first-of-type */
+    --landing-text-first-margin-top: 8%;
+    --landing-text-first-margin-top-xs2: 7%;
+    --landing-text-first-margin-top-sm: -0.3em;
+    --landing-text-first-margin-top-md: -0.5em;
+    --landing-text-first-margin-top-lg: -0.6em;
+    --landing-text-first-margin-bottom: 8%;
+    --landing-text-first-margin-bottom-xs2: 7%;
+    --landing-text-first-padding-top: 11%;
+    --landing-text-first-padding-top-xs2: 11%;
+    /* h1 */
+    --landing-text-h1-fs: 9vw;
+    --landing-text-h1-fs-sm: 2.5em;
+    --landing-text-h1-leading: 90%;
+    /* h2 */
+    --landing-text-last-margin-top-sm: -0.15em;
+    --landing-text-h2-fs: 5.15vw;
+    --landing-text-h2-fs-sm: 1.5em;
+    --landing-text-h2-tracking: 0.11em;
+    --landing-text-h2-tracking-sm: 0.08em;
+    /*links */
+    --landing-links-bottom: -1.5em;
+    --landing-links-max-w: 15em;
+    --landing-links-max-w-md: 17em;
+    --landing-links-fs: 10vw;
+    --landing-links-gap: 0.15em;
+    --landing-links-gap-md: 0.25em;
+    --landing-links-padding-right-sm: 0.9em;
+    --landing-links-padding-right-md: 1.45em;
+  }
+  /* utility */
+  .ll-fs {
+    font-size: min(2.63vw, 1.3rem);
+  }
+  .ll-links-fs {
+    font-size: min(4.8vw, 2.5rem);
+  }
+  .ll-links-fs--twit {
+    font-size: min(5.4vw, 2.5rem);
+  }
+  .ll-links-fs--pdf {
+    font-size: min(4.6vw, 2.35rem);
+  }
+  .ll-links-bottom {
+    bottom: 1.2em;
+  }
+  .text-ml-sm {
+    margin-left: min(43.8%, 21.5rem);
+  }
+
+  .landing-layout {
+    @apply p-[var(--landing-padding)];
+    div:first-of-type {
+      @apply flex flex-col justify-center;
+    }
+    &__text {
+      @screen sm {
+        @apply pr-[var(--landing-text-padding-right-sm)]
+          ml-[var(--landing-text-margin-left-sm)] 
+          ll-fs;
+      }
+      @screen md {
+        @apply ml-[var(--landing-text-margin-left-md)];
+      }
+      div {
+        @apply uppercase;
+        &:first-of-type {
+          @apply mt-[var(--landing-text-first-margin-top)] 
+            mb-[var(--landing-text-first-margin-bottom)] 
+            pt-[var(--landing-text-first-padding-top)];
+          @screen xs2 {
+            @apply mb-[var(--landing-text-first-margin-bottom-xs2)] 
+              pt-[var(--landing-text-first-padding-top-xs2)] 
+              mt-[var(--landing-text-first-margin-top-xs2)];
+          }
+          @screen sm {
+            @apply pt-0 mb-0 mt-[var(--landing-text-first-margin-top-sm)];
+          }
+          @screen md {
+            @apply mt-[var(--landing-text-first-margin-top-md)];
+          }
+          @screen lg {
+            @apply mt-[var(--landing-text-first-margin-top-lg)];
+          }
+          h1 {
+            font-size: var(--landing-text-h1-fs);
+            @apply leading-[var(--landing-text-h1-leading)];
+            @screen sm {
+              font-size: var(--landing-text-h1-fs-sm);
+            }
+          }
+        }
+        &:last-of-type {
+          @apply col-start-2 uppercase;
+          @screen sm {
+            @apply mt-[var(--landing-text-last-margin-top-sm)];
+          }
+          h2 {
+            font-size: var(--landing-text-h2-fs);
+            @apply tracking-[var(--landing-text-h2-tracking)];
+            @screen sm {
+              @apply tracking-[var(--landing-text-h2-tracking-sm)];
+              font-size: var(--landing-text-h2-fs-sm);
+            }
+          }
+        }
+      }
+    }
+    &__links {
+      font-size: var(--landing-links-fs);
+      @apply bottom-[var(--landing-links-bottom)] 
+        max-w-[var(--landing-links-max-w)] 
+        gap-[var(--landing-links-gap)];
+      @screen sm {
+        @apply pr-[var(--landing-links-padding-right-sm)] ll-links-fs ll-links-bottom;
+      }
+      @screen md {
+        @apply max-w-[var(--landing-links-max-w-md)]
+           pr-[var(--landing-links-padding-right-md)]
+           gap-[var(--landing-links-gap-md)];
+      }
+      span {
+        @apply transition-all hover:text-themeYellow hover:drop-shadow-yellow;
+      }
+      span:nth-of-type(1) {
+        @apply mr-[-.03em];
+        svg {
+          @apply scale-[1.05];
+        }
+      }
+      span:nth-of-type(2) {
+        @apply text-[11vw] sm:ll-links-fs--twit;
+        svg {
+          @apply scale-[1.1] md:scale-[1.2];
+        }
+      }
+      span:nth-of-type(3) {
+        @apply text-[9.5vw] sm:ll-links-fs--pdf;
+        svg {
+          @apply scale-[1.15];
+        }
+      }
+    }
+  }
+}

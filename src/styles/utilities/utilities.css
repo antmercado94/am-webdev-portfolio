@@ -1,0 +1,152 @@
+@layer utilities {
+  /* layout */
+  .landing-layout {
+    column-gap: 2%;
+    @apply absolute 
+      h-full 
+      w-full 
+      grid 
+      grid-cols-landing 
+      grid-flow-row-dense 
+      content-center;
+    @screen sm {
+      @apply grid-cols-landingSm justify-end;
+    }
+    main {
+      @apply contents;
+    }
+  }
+  .content-layout {
+    @apply absolute w-full flex flex-col justify-evenly self-center;
+  }
+  .content-wrapper {
+    @apply mx-[1.6em] mt-12;
+    @screen xs {
+      @apply mx-[1.3em];
+    }
+    @screen sm {
+      @apply mx-8;
+    }
+    @media (max-height: 620px) {
+      margin-top: 0;
+    }
+  }
+
+  .resScale {
+    @apply scale-[.35] !important;
+    @screen sm {
+      @apply scale-[.18] !important;
+    }
+  }
+
+  /* text */
+  .global-fs {
+    font-size: min(4.2vw, 1rem);
+  }
+  .global-fs--smHeight {
+    font-size: min(4vw, 1rem);
+  }
+  .global-fs--smHeightMobile {
+    font-size: min(4.5vw, 1.1rem);
+  }
+  .global-fs--mdHeight {
+    font-size: min(5vw, 1.05rem);
+  }
+  .global-fs--xs {
+    font-size: min(5vw, 1.2rem);
+  }
+  .global-fs--xxl {
+    font-size: min(1.2vw, 1.7rem);
+  }
+  .global-fs--xxxl {
+    font-size: min(1.5vw, 2em);
+  }
+  .heading {
+    @apply font-heading font-bold uppercase;
+  }
+  .text-shadow--yellow {
+    text-shadow: 0px 0px 2px #cfa242;
+  }
+  .text-shadow--magenta {
+    text-shadow: 0px 0px 2px #b8287e;
+  }
+  .text-shadow--teal {
+    text-shadow: 0px 0px 2px #087265;
+  }
+
+  /* border */
+  .teal-border {
+    @apply rounded-[var(--container-border-radius)] border border-themeTeal;
+    &--mn {
+      @apply border-[1px];
+    }
+  }
+  .teal-border--shadow {
+    @apply shadow-teal;
+  }
+
+  /* positioning */
+  .absolute-centered {
+    @apply translate-x-[-50%] translate-y-[-50%] top-2/4;
+  }
+  .absolute-centered--contact {
+    @apply xs:translate-x-[-51%] md:translate-x-[-52%];
+  }
+
+  /* list */
+  .list {
+    @apply flex;
+    & > div {
+      @apply order-2;
+    }
+    li {
+      @apply my-[.15em] ml-2 text-themeYellow;
+      @screen sm {
+        @apply ml-[.2rem];
+      }
+      @screen md {
+        @apply ml-[.75rem];
+      }
+    }
+    span {
+      @apply mt-[.55em] order-1 self-start w-listArrow;
+    }
+  }
+
+  /* pagination arrows */
+  .arrow__hovered {
+    svg {
+      @apply drop-shadow-yellow;
+      path {
+        @apply stroke-themeYellow fill-themeYellow;
+      }
+    }
+  }
+  .pagination {
+    span {
+      svg,
+      path {
+        @apply transition-all;
+      }
+      @media (hover: hover) {
+        &.active {
+          @apply cursor-pointer
+            hover:arrow__hovered;
+        }
+      }
+      &.arrow--fixed {
+        @apply hover:transition-opacity hover:opacity-100 !important;
+      }
+    }
+  }
+
+  /* animations */
+  @keyframes reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

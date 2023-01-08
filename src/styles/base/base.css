@@ -1,0 +1,49 @@
+@layer base {
+  :root {
+    /* base font sizes */
+    --fs-h1: 1.8em;
+    --fs-h2: 1.2em;
+    --fs-p: 0.75em;
+    --fs-ul: 0.75em;
+  }
+  html {
+    @apply global-fs bg-containerBlue;
+    @screen xs {
+      @apply global-fs--xs;
+    }
+    @screen smHeight {
+      @apply global-fs--smHeight;
+    }
+    @screen smHeightMobile {
+      @apply global-fs--smHeightMobile;
+    }
+    @screen mdHeight {
+      @apply global-fs--mdHeight;
+    }
+    @screen xxl {
+      @apply global-fs--xxl;
+    }
+    @screen xxxl {
+      @apply global-fs--xxxl;
+    }
+    body {
+      @apply overscroll-y-contain;
+      h1 {
+        font-size: var(--fs-h1);
+      }
+      h2 {
+        font-size: var(--fs-h2);
+      }
+      p {
+        font-size: var(--fs-p);
+      }
+      ul {
+        font-size: var(--fs-ul);
+      }
+      p,
+      ul li {
+        @apply tracking-wide;
+      }
+    }
+  }
+}

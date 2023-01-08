@@ -1,0 +1,289 @@
+@layer components {
+  :root {
+    /* vars */
+    --container-border-width: 1px;
+    --container-border-radius: 2px;
+    --container-margin-fix: -4px;
+    /* about */
+    --container-height-about: 39%;
+    --container-height-about-xs: 39.5%;
+    --container-height-about-sm: 8.25rem;
+    --container-height-about-md: 8.75rem;
+    --container-height-about-lg: 9.5rem;
+    --container-height-about-xl: 10.25rem;
+    /* contact */
+    --container-height-contact: 33%;
+    --container-height-contact-md: 4.4rem;
+    --container-height-contact-xl: 4.9rem;
+    /* project */
+    --container-height-project: 1.35em;
+    --container-height-project-smHeightMobile: 19.5%;
+    --container-height-project-sm: 23.5%;
+    --container-height-project-md: 1.85rem;
+    --container-height-project-lg: 2.1rem;
+    --container-height-project-xl: 2.2rem;
+    /* excerpt */
+    --container-height-excerpt: 100%;
+    --container-width-excerpt-before: 33.5%;
+    --container-width-excerpt-before-xs: 32%;
+    --container-width-excerpt-before-xs2: 5.65rem;
+    --container-width-excerpt-before-xs3: 6.3rem;
+    --container-width-excerpt-before-sm: 8.2rem;
+    --container-width-excerpt-before-md: 10.2rem;
+    --container-width-excerpt-before-lg: 11rem;
+    --container-width-excerpt-before-xl: 13rem;
+    /* single */
+    --container-height-single: 100%;
+    /* single blog*/
+    --single-date-width-pseudo: 34.5%;
+    --single-date-width-pseudo-xxs: 32.5%;
+    --single-date-width-pseudo-xs: 29.5%;
+    --single-date-width-pseudo-sm: 32.5%;
+    --single-date-left-before: 0;
+    --single-date-right-after: 0;
+    /* inner */
+    --container-inner-height: 100%;
+  }
+  /* utility */
+  .neon-container--shadow {
+    &:before,
+    &:after {
+      @apply drop-shadow-magenta;
+    }
+  }
+
+  .neon-container {
+    @apply relative;
+    &:before,
+    &:after {
+      content: "";
+      border: var(--container-border-width) solid;
+      @apply absolute 
+        w-[calc(100%-var(--container-margin-fix))] 
+        ml-[var(--container-margin-fix)]
+        rounded-[var(--container-border-radius)]
+        border-themeMagenta 
+        -z-10;
+    }
+    &:before {
+      @apply border-b-0;
+    }
+    &:after {
+      @apply bottom-0 border-t-0;
+    }
+    &--mn:before,
+    &--mn:after {
+      --container-border-width: 1px;
+    }
+    &--about:before,
+    &--about:after,
+    &--contact:before,
+    &--contact:after {
+      @apply left-0;
+    }
+    &--project:before,
+    &--excerpt:before,
+    &--single:before {
+      @apply top-0;
+    }
+    /* about */
+    &--about:before,
+    &--about:after {
+      @apply h-[var(--container-height-about)];
+      @screen xs {
+        @apply h-[var(--container-height-about-xs)];
+      }
+      @screen sm {
+        @apply h-[var(--container-height-about-sm)];
+      }
+      @screen md {
+        @apply h-[var(--container-height-about-md)];
+      }
+      @screen lg {
+        @apply h-[var(--container-height-about-lg)];
+      }
+      @screen xl {
+        @apply h-[var(--container-height-about-xl)];
+      }
+    }
+    &--about:before {
+      @apply rounded-br-none;
+    }
+    &--about:after {
+      @apply rounded-tr-none;
+    }
+    /* contact */
+    &--contact:before,
+    &--contact:after {
+      @apply h-[var(--container-height-contact)] ml-0 border-l-0;
+      @screen md {
+        @apply h-[var(--container-height-contact-md)];
+      }
+      @screen xl {
+        @apply h-[var(--container-height-contact-xl)];
+      }
+    }
+    &--contact:before {
+      @apply rounded-br-none;
+    }
+    &--contact:after {
+      @apply rounded-tr-none;
+    }
+    /* project */
+    &--project:before,
+    &--project:after {
+      @apply h-[var(--container-height-project)] border-r-0;
+      @screen smHeightMobile {
+        @apply h-[var(--container-height-project-smHeightMobile)];
+      }
+      @screen sm {
+        @apply h-[var(--container-height-project-sm)];
+      }
+      @screen md {
+        @apply h-[var(--container-height-project-md)];
+      }
+      @screen lg {
+        @apply h-[var(--container-height-project-lg)];
+      }
+      @screen xl {
+        @apply h-[var(--container-height-project-xl)];
+      }
+    }
+    &--project:before {
+      @apply rounded-bl-none;
+    }
+    &--project:after {
+      @apply border-t-0 border-b-0 rounded-tl-none;
+    }
+    /* excerpt */
+    &--excerpt:before,
+    &--excerpt:after {
+      @apply h-[var(--container-height-excerpt)] ml-0;
+    }
+    &--excerpt:after {
+      @apply border-0;
+    }
+    &--excerpt__date {
+      &:before,
+      &:after {
+        content: "";
+        border-bottom: var(--container-border-width) solid;
+        @apply absolute bottom-0 border-themeMagenta;
+      }
+      &--excerpt__date--shadow {
+        @apply drop-shadow-magenta;
+      }
+      &:before {
+        @apply w-[var(--container-width-excerpt-before)] left-0;
+        @screen xs {
+          @apply w-[var(--container-width-excerpt-before-xs)];
+        }
+        @screen xs2 {
+          @apply w-[var(--container-width-excerpt-before-xs2)];
+        }
+        @screen xs3 {
+          @apply w-[var(--container-width-excerpt-before-xs3)];
+        }
+        @screen sm {
+          @apply w-[var(--container-width-excerpt-before-sm)];
+        }
+        @screen md {
+          @apply w-[var(--container-width-excerpt-before-md)];
+        }
+        @screen lg {
+          @apply w-[var(--container-width-excerpt-before-lg)];
+        }
+        @screen xl {
+          @apply w-[var(--container-width-excerpt-before-xl)];
+        }
+      }
+      &:after {
+        @apply w-[calc(var(--container-width-excerpt-before)-var(--project-links-left-before))]
+      right-0;
+        @screen xs {
+          @apply w-[calc(var(--container-width-excerpt-before-xs)-var(--project-links-left-before))];
+        }
+        @screen xs2 {
+          @apply w-[calc(var(--container-width-excerpt-before-xs2)-var(--project-links-left-before))];
+        }
+        @screen xs3 {
+          @apply w-[calc(var(--container-width-excerpt-before-xs3)-var(--project-links-left-before))];
+        }
+        @screen sm {
+          @apply w-[calc(var(--container-width-excerpt-before-sm)-var(--project-links-left-before))];
+        }
+        @screen md {
+          @apply w-[calc(var(--container-width-excerpt-before-md)-var(--project-links-left-before))];
+        }
+        @screen lg {
+          @apply w-[calc(var(--container-width-excerpt-before-lg)-var(--project-links-left-before))];
+        }
+        @screen xl {
+          @apply w-[calc(var(--container-width-excerpt-before-xl)-var(--project-links-left-before))];
+        }
+      }
+      .neon-sign {
+        @apply ml-[var(--container-margin-fix)];
+      }
+    }
+    /* single */
+    &--single:before,
+    &--single:after {
+      @apply h-[var(--container-height-single)] ml-0;
+    }
+    &--single:before {
+      @apply border-t-0;
+    }
+    &--single__date {
+      &:before,
+      &:after {
+        content: "";
+        border-bottom: var(--container-border-width) solid;
+        @apply w-[var(--single-date-width-pseudo)] 
+          absolute
+          bottom-0
+          border-themeMagenta;
+        @screen xxs {
+          @apply w-[var(--single-date-width-pseudo-xxs)];
+        }
+        @screen xs {
+          @apply w-[var(--single-date-width-pseudo-xs)];
+        }
+        @screen sm {
+          @apply w-[var(--single-date-width-pseudo-sm)];
+        }
+      }
+      &--single__date--shadow {
+        @apply drop-shadow-magenta;
+      }
+      &:before {
+        @apply left-[var(--single-date-left-before)];
+      }
+      &:after {
+        @apply right-[var(--single-date-right-after)];
+      }
+    }
+    /* inner */
+    &__inner--left:before,
+    &__inner--right:after {
+      content: "";
+      border-right: var(--container-border-width) solid;
+      @apply absolute 
+        h-[var(--container-inner-height)]
+        text-themeMagenta
+        border-themeMagenta 
+        rounded-[var(--container-border-radius)]
+        top-0;
+    }
+    &__inner--left--shadow:before,
+    &__inner--right--shadow:after {
+      @apply drop-shadow-magenta;
+    }
+    &__inner--left:before {
+      @apply left-0;
+    }
+    &__inner--right:after {
+      @apply right-0;
+    }
+  }
+}
