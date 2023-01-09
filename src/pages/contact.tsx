@@ -85,9 +85,9 @@ const Contact: React.FC = () => {
     e.preventDefault();
     const apiURL = `${
       process.env.NODE_ENV !== "production"
-        ? "http://localhost:5000/contact"
-        : process.env.API_URL
-    }`;
+        ? "http://localhost:5000"
+        : process.env.GATSBY_API_URL
+    }/contact`;
     const btn = document.getElementById("btnSubmit")!,
       inputs = document.querySelectorAll("input"),
       textArea = document.querySelector("textarea")!;
