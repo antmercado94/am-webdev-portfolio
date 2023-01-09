@@ -83,16 +83,17 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const apiURL = `${
+      process.env.NODE_ENV !== "production"
+        ? "http://localhost:5000/contact"
+        : process.env.API_URL
+    }`;
     const btn = document.getElementById("btnSubmit")!,
       inputs = document.querySelectorAll("input"),
       textArea = document.querySelector("textarea")!;
     /* req info */
     const options = {
-      endpoint: `${
-        process.env.NODE_ENV !== "production"
-          ? "http://localhost:5000/contact"
-          : process.env.API_URL
-      }`,
+      endpoint: apiURL,
       method: "POST",
       headers: { "Content-Type": "application/json" },
       data: JSON.stringify(formData),
