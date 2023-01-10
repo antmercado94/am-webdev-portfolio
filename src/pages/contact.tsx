@@ -118,6 +118,7 @@ const Contact: React.FC = () => {
         textArea.value = "";
         setMessageFocus(false);
         btn.removeAttribute("disabled");
+        setWheelReady(true);
       })
       .catch(err => {
         setPending(false);
@@ -252,7 +253,11 @@ const Contact: React.FC = () => {
               {!pending && success.message && (
                 <div className="success">{success.message}</div>
               )}
-              {pending && <div className="success">.....</div>}
+              {pending && (
+                <div className="success animate-pulse text-sm leading-none">
+                  &bull;&bull;&bull;&bull;
+                </div>
+              )}
 
               <motion.button
                 id="btnSubmit"
