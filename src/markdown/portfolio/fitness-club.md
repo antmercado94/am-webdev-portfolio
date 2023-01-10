@@ -8,7 +8,7 @@ site: "https://fitness-club-training.netlify.app/"
 blog: true
 type: portfolio
 order: 2
-last-modified: 2022-12-28
+last-modified: 2022-12-29
 ---
 
 This post is related to my portfolio project, _Fitness Club_. The site can be viewed [here](https://fitness-club-training.netlify.app/), or you can check out the repository [here](https://github.com/antmercado94/fitness-club/tree/static-gatsby).
