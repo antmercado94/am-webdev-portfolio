@@ -4,10 +4,10 @@ slug: about-portfolio
 date: "12.28.2022"
 blog: true
 type: blog
-last-modified: 2022-12-31
+last-modified: 2022-12-28
 ---
 
-This portfolio was developed using [_React_](https://reactjs.org/) and the [_Gatsby_](https://www.gatsbyjs.com/) framework. Styling is done with the help of the [_Tailwind CSS_](https://tailwindcss.com/) framework. And for most of the animations, the [_Framer Motion_](https://www.framer.com/motion/) React library is used. The source code for this project can be found [here]().
+This portfolio was developed using [_React_](https://reactjs.org/) and the [_Gatsby_](https://www.gatsbyjs.com/) framework. Styling is done with the help of the [_Tailwind CSS_](https://tailwindcss.com/) framework. And for most of the animations, the [_Framer Motion_](https://www.framer.com/motion/) React library is used. The source code for this project can be found [here](https://github.com/antmercado94/am-webdev-portfolio).
 
 <br/>
 

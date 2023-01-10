@@ -1,14 +1,14 @@
 ---
 title: Bingo Companion
 slug: bingo-companion
-date: "09.07.2022"
+date: "01.01.2023"
 thumb: portfolio/bingo-companion/thumb/bingo-companion.png
 repo: "https://github.com/antmercado94/bingocompanionapp"
 site: "https://bingocompanionapp.netlify.app/"
 blog: true
 type: portfolio
 order: 1
-last-modified: 2022-12-31
+last-modified: 2023-01-01
 ---
 
 This post is a quick summary about my React project, _Bingo Companion_. You can check it out on GitHub [here](https://github.com/antmercado94/bingocompanionapp), or view it in action [here](https://bingocompanionapp.netlify.app/).
