@@ -13,7 +13,7 @@ const About: React.FC<PageProps<gatsbyImageDataQuery>> = ({ data }) => {
       <div className="content-wrapper">
         <div className="about sm:grid">
           <div className="about__text sm:col-start-2">
-            <div className="my-4 flex justify-center text-center sm:justify-start sm:text-left">
+            <div className="my-3 sm:my-2 flex justify-center text-center sm:justify-start sm:text-left">
               <div className="about__me">
                 <h1 className="heading text-offWhite md:mb-1">about me</h1>
                 <p className="font-content text-themeMagenta">
@@ -34,16 +34,15 @@ const About: React.FC<PageProps<gatsbyImageDataQuery>> = ({ data }) => {
                 </p>
               </div>
             </div>
-            <div className="my-4 text-center about__skills sm:text-left">
+            <div className="my-3 sm:my-2 text-center about__skills sm:text-left">
               <h2 className="heading text-offWhite md:mb-1">skills & tech</h2>
               <div className="gap-8 flex justify-center capitalize sm:justify-start">
                 <ul className="text-left font-content list">
                   <div>
-                    <li>HTML/CSS</li>
+                    <li>HTML</li>
+                    <li>CSS/SASS</li>
+                    <li>Bootstrap</li>
                     <li>JavaScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                    <li>TypeScript</li>
                   </div>
                   <span>
                     <Arrow />
@@ -51,11 +50,10 @@ const About: React.FC<PageProps<gatsbyImageDataQuery>> = ({ data }) => {
                 </ul>
                 <ul className="text-left font-content list">
                   <div>
-                    <li>WordPress</li>
+                    <li>React</li>
                     <li>Gatsby</li>
-                    <li>Docker</li>
-                    <li>Git</li>
-                    <li>CompTIA A+</li>
+                    <li>Node.js</li>
+                    <li>TypeScript</li>
                   </div>
                   <span>
                     <Arrow />
