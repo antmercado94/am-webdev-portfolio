@@ -7,7 +7,7 @@ repo: "https://github.com/antmercado94/bingocompanionapp"
 site: "https://bingocompanionapp.netlify.app/"
 blog: true
 type: portfolio
-order: 1
+order: 2
 last-modified: 2023-01-01
 ---
 

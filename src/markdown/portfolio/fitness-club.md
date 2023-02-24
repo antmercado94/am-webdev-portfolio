@@ -7,7 +7,7 @@ repo: "https://github.com/antmercado94/fitness-club/tree/static-gatsby"
 site: "https://fitness-club-training.netlify.app/"
 blog: true
 type: portfolio
-order: 2
+order: 3
 last-modified: 2022-12-29
 ---
 
